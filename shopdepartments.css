@@ -283,13 +283,9 @@ header .icon-cart {
     100% { transform: scale(0.95); opacity: 0.9; }
 }
 
-.shopnow {
-  margin-top: -7px;
-  margin-right: 90px;
-}
-
   .shopnowbtn {
         padding: 10px 20px;          /* slightly smaller padding */
+      margin-top: 70px;
         font-size: 14px;             /* cleaner mobile size */
         border-radius: 6px;          /* more compact corners */
         width: auto;                 /* stays natural size */
