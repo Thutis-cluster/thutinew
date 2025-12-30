@@ -1,0 +1,172 @@
+[
+    {
+        "id": "vegetableproducts1",
+        "name": "Beetroot Pack",
+        "price": 15,
+        "image": "images/Packed Beetrot-fotor-bg-remover-20250327232440.png"
+    },
+    {
+        "id": "vegetableproducts2",
+        "name": "Beetroot Sag",
+        "price": 40,
+        "image": "images/Beetrot_Sag-removebg-preview.png"
+    },
+    {
+        "id": "vegetableproducts3",
+        "name": "Butternut",
+        "price": 20,
+        "image": "images/Butternut-fotor-bg-remover-2025040114121.png"
+    },
+    {
+        "id": "vegetableproducts4",
+        "name": "Cabbage Half",
+        "price": 15,
+        "image": "images/Cabbage-fotor-bg-remover-2025040115648.png"
+    },
+    {
+        "id": "vegetableproducts5",
+        "name": "Cabbage Full",
+        "price": 25,
+        "image": "images/Cabbage web-fotor-bg-remover-2025032721937.png"
+    },
+    {
+        "id": "vegetableproducts6",
+        "name": "Carrots Pack",
+        "price": 15,
+        "image": "images/Carrots-fotor-bg-remover-20250401211.png"
+    },
+    {
+        "id": "vegetableproducts7",
+        "name": "Carrots 10Kg",
+        "price": 55,
+        "image": "images/Packed Carrots-fotor-bg-remover-2025032723178.png"
+    },
+    {
+        "id": "vegetableproducts8",
+        "name": "Cucumbers",
+        "price": 7,
+        "image": "images/Cucumbers-fotor-bg-remover-202504012279.png"
+    },
+    {
+        "id": "vegetableproducts9",
+        "name": "Green Beans",
+        "price": 15,
+        "image": "images/Green beans-fotor-bg-remover-20250327211436.png"
+    },
+   {
+        "id": "vegetableproducts10",
+        "name": "Green Beans Box",
+        "price": 40,
+        "image": "images/Green Beans Box-fotor-bg-remover-2025040124433.png"
+    },
+    {
+        "id": "vegetableproducts11",
+        "name": "Green Peppers",
+        "price": 8,
+        "image": "images/Peppers packed-fotor-bg-remover-20250327215421.png"
+
+    },
+    {
+        "id": "vegetableproducts12",
+        "name": "Green Peppers Box",
+        "price": 50,
+        "image": "images/Box Peppers-fotor-bg-remover-202503218342.png"
+    },
+    {
+        "id": "vegetableproducts13",
+        "name": "Lettuce",
+        "price": 15,
+        "image": "images/Lettuce-fotor-bg-remover-202504014319.png"
+    },
+    {
+        "id": "vegetableproducts14",
+        "name": "Maize Meals 5Kg",
+        "price": 45,
+        "image": "images/Mealie Meal 5Kg-fotor-bg-remover-20250406194721.png"
+    },
+    {
+        "id": "vegetableproducts15",
+        "name": "Maize Meals 10Kg",
+        "price": 75,
+        "image": "images/Mealie Meal 10kg-fotor-bg-remover-20250406194946.png"
+    },
+    {
+        "id": "vegetableproducts16",
+        "name": "Onions Pack",
+        "price": 15,
+        "image": "images/Onions Pack-fotor-bg-remover-2025032722138.png"
+    },
+    {
+        "id": "vegetableproducts17",
+        "name": "Onions Sag",
+        "price": 35,
+        "image": "images/IMG-20220731-WA0005-fotor-bg-remover-202504014127.png"
+    },
+    {
+        "id": "vegetableproducts18",
+        "name": "Potatoes Pack",
+        "price": 15,
+        "image": "images/Potatoes other-fotor-bg-remover-2025040122439.png"
+    },
+    {
+        "id": "vegetableproducts19",
+        "name": "Potatoes Sag",
+        "price": 90,
+        "image": "images/IMG-20220730-WA0001-fotor-bg-remover-2025040141752.png"
+    },
+    {
+        "id": "vegetableproducts20",
+        "name": "Pumpkins Half",
+        "price": 20,
+        "image": "images/Pumpkins-fotor-bg-remover-2025040134115.png"
+    },
+    {
+        "id": "vegetableproducts21",
+        "name": "Pumpkins Full",
+        "price": 30,
+        "image": "images/Pack Pumpkin-fotor-bg-remover-2025040144253.png"
+    },
+    {
+        "id": "vegetableproducts22",
+        "name": "Red Peppers",
+        "price": 8,
+        "image": "images/Single Red Peppers-fotor-bg-remover-2025040134141.png"
+    },
+    {
+        "id": "vegetableproducts23",
+        "name": "Red Peppers Box",
+        "price": 40,
+        "image": "images/Red Peppers Real Box-fotor-bg-remover-2025040613110.png"
+    },
+    {
+        "id": "vegetableproducts24",
+        "name": "Sweet Potatoes",
+        "price": 25,
+        "image": "images/Sweet Potatoes1-fotor-bg-remover-2025040133027.png"
+    },
+    {
+        "id": "vegetableproducts25",
+        "name": "Tomatoes Pack",
+        "price": 15,
+        "image": "images/Tomatoes-fotor-bg-remover-2025040132728.png"
+    },
+    {
+        "id": "vegetableproducts26",
+        "name": "Tomatoes Box",
+        "price": 70,
+        "image": "images/IMG-20220730-WA0002-fotor-bg-remover-202504011375.png"
+    },
+    {
+        "id": "vegetableproducts27",
+        "name": "Yellow Pepper Single",
+        "price": 8,
+        "image": "images/Yellow Pepper Single-fotor-bg-remover-2025040143426.png"
+    },
+    {
+        "id": "vegetableproducts28",
+        "name": "Yellow Peppers Box",
+        "price": 40,
+        "image": "images/Box yellow Pepper-fotor-bg-remover-2025032021017.png"
+    }
+ 
+]

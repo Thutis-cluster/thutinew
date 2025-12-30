@@ -1,0 +1,315 @@
+<!DOCKTYPE html>
+   <html lang="en">
+    <head>
+       <meta charset = 'utf-8'>
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;900&display=swap" rel="stylesheet"> 
+      <link rel="stylesheet" href="shopdepartments.css">
+      <link rel="stylesheet" href="newsletter-modal.css">
+    </head>
+
+ <body class= "">
+    <section class= "index-logo">
+        <div class= "wrapper">
+         <h1><a href="index.html">thutis'</a></h1>
+
+<form id="homepageSearchForm">
+  <input type="text" id="homepageSearchInput" placeholder="Search for products..." />
+    <button type="submit">Search</button>
+   <button type="button" id="micBtn" class="micBtn" title="Speak">
+    🎤
+  </button>
+</form>
+                  <div class="shopnow" id="shopnow" >
+                     <a href="mainshop.html" id="shopnowbtn" class="shopnowbtn">Shop now</a> 
+                  </div>
+           
+            <header>
+                <div class="icon-cart">
+                    <svg  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
+                    </svg>
+                         <span>0</span>  
+                </div>
+            </header>
+    </div>
+        </section>
+    
+    <!------Home Ribbon------>
+<section class="index-topnav">
+  <div class="wrapper">
+    <div class="topnav" id="myTopnav">
+
+   <div class="topnav-left">
+      <a href="index.html" class="home">Home</a>
+
+      <!-- This is always visible on nav (even on toggle) -->
+      <div class="dropdown always-visible">
+        <button class="dropbtn">Department ▾</button>
+        <div class="dropdown-content">
+          <a href="mainshop.html">Shop Everything</a>
+          <a href="vegetables.html">Vegetable Department</a>
+          <a href="chicken.html">Chicken Department</a>
+          <a href="dogfood&tissues.html">Households</a>
+        </div>
+      </div>
+   </div>
+
+      <!-- Collapsible links (for mobile/hamburger toggle) -->
+      <div class="collapsible-links">
+        <a href="aboutus.html">About us</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="#tradinghours">Trading hours</a>
+      </div>
+
+      <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+        <i class="fa fa-bars"></i>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+    <!----Departments----->
+        <div class= "container">
+
+        <div class= "listProduct">
+            <a href = "mainshop.html">
+        <div class= "listProduct1">
+            <div class="nft">
+              <div class='main'>
+                <img class='tokenImage' src="images/logo slogan-fotor-bg-remover-202503272309.png" alt="NFT" />
+                <div class='tokenInfo'>
+                  <div class="price">
+                    <p>Everything you need</p>
+                  </div>
+                </div>
+                <hr />
+                <button class="btn">
+                <div class='creator'>
+                  <p><ins>Enter</ins></p>
+                </div>
+              </button>
+              </div>
+            </div>
+          </div>
+        </a>
+           
+        <a href = "vegetables.html">
+        <div class= "item">
+            <img src= "images/Vegies-fotor-bg-remover-202504015937.png" alt= "">
+            <div class= "wrapper"> 
+            <h2><p>VEGETABLES AND MAIZE MEAL<p></h2>
+            <hr/>
+            <button class= "addCart">
+                EXPLORE DEPARTMENT
+            </button>
+        </div>
+    </div>
+</a>
+
+<a href = "chicken.html">
+        <div class= "item">
+            <img src="images/Broilerss-fotor-bg-remover-20250402154827.png" alt= "">
+            <div class= "wrapper">
+            <h2>EGGS, CHICKENS AND CHICKEN FED</h2>
+            <hr/>
+            <button class= "addCart">
+                EXPLORE DEPARTMENT
+            </button>
+        </div>
+    </div>
+</a>
+
+<a href = "dogfood&tissues.html">
+        <div class= "item">
+            <img src= "images/Dof food background move-fotor-bg-remover-2025040341750.png" alt= "">
+            <div class= "wrapper">
+            <h2>DOG FOOD, TISSUES </h2>
+            <hr/>
+            <button class= "addCart">
+                EXPLORE DEPARTMENT
+            </button>
+    </div>
+        </div>
+    </a>  
+        </div>
+        </div>
+
+<!-- Placeholder to load modal -->
+<div id="modalContainer"></div>
+   
+    <!-----cart Page----->
+<div class= "cartTab">
+    <h1> Shopping Cart </h1>
+    <div class= "listCart">
+    <div class= "item">
+    <!----- <div class= "image">
+                <img src= "/images/Red Peppers Real Box-fotor-bg-remover-2025040613110.png" alt= "">
+            </div>
+            <div class= "name">
+                NAME
+            </div>
+            <div class= "totalPrice">
+                R40
+            </div>
+            <div class= "quantity">
+                <span class= "minus"> < </span>
+                <span> 1 </span>
+                <span class= "plus"> > </span>
+            </div> ------>
+        </div>
+    </div>
+         <div class="cart-grandtotal"></div>
+    <div class= "btn">
+        <button class= "close"> CLOSE </button>
+        <button><a href= "cartPage.html" class= "checkOut"> CartPage</button></a>
+    </div>
+</div>
+
+<!----SignUp---->
+    <section class="index-signup">
+       <div class="wrapper">
+    <h2>Subscribe to our Newsletter</h2>
+    <p>Get the latest updates and offers straight to your inbox!</p>
+    <form id="newsletterForm">
+      <input type="text" id="subscriberName" name="name" placeholder="Your Name" required>
+      <input type="email" id="subscriberEmail" name="email" placeholder="Your Email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+   
+    <div id="thankYouMessage" style="display:none;">
+      <p>Thanks for subscribing! 🎉</p>
+    </div>
+    <div id="existsMessage" style="display:none; color:red;">
+      <p>Email already subscribed!</p>
+    </div> 
+       </div>
+
+      <img src="images/About us-fotor-bg-remover-20250603214340.png" alt="SignUp">
+        </section> 
+
+  <!-----Social Media----->
+           <!--------MyAccount (Dropdown)------->
+        <section class="footer-socialmedia">
+            <div class= "footer-wrapper">
+            <div class= "myaccountdropdown" id= "myaccountdropdown">
+                <h2>Self Service</h2>
+            <a href= "cartPage.html" id= "cart">Cart </a>
+            <a href= "checkoutpage.html"> CheckOut </a>
+            <a href= "contactus.html" class= "contactus">Contact Us</a>
+        <a href= "javascript:void(0);" class= "icon" onclick= "myAcount()">
+            <i class="fa fa-Plus"></i>
+        </a>
+        <a href= "javascript:void(0);" class= "icon1" onclick= "myAcount()">
+            <i class="fa fa-Minus"></i>
+        </a>
+        </div>
+
+        <!-----MyAccount----->
+        <div class= "footer-content">
+            <h2 class="selfserv">Self Service</h2>
+            <ul class= "selfserv-list">               
+            <li><a href="cartPage.html" class= "cart" id= "cart" onclick= "cartNav()">Cart</a></li> 
+            <li><a href="checkoutpage.html" class= "checkout" id= "checkout" onclick= "checkoutNav()">CheckOut</a></li>
+            <li><a href= "contactus.html" class= "contactus">Contact Us</a></li>
+        </ul>
+            </div>
+
+            <!------information AboutUs (DropDown)----->
+            <div class= "informationdropdown" id= "Informationdropdown">  
+                <h2>Information</h2>
+               <a href= "#" class="subscribeBtn" id= "subscribeBtn">Subscribe to our NewsLetters</a>
+               <a href= "readourpolicy.html" class= "readourpolicy">Read our Policy</a>
+               <a href= "privatepolicy.html" class= "privatepolicy">Privacy Policy</a>
+               <a href= "refundreturn-policy.html" id= "refundreturn-policy" class= "refundreturn-policy">Refund/Return Policy</a>
+               <a href= "termsandconditions.html" class= "termsandconditions">Terms and Conditions</a>
+               <a href= "javascript:void(0);" class= "icon" onclick= "information()">
+                    <i class="fa fa-Plus"></i>
+                </a>
+                <a href= "javascript:void(0);" class= "icon1" onclick= "information()">
+                    <i class="fa fa-Minus"></i>
+                </a>
+            </div>
+
+            <!------Information AboutUs----->
+            <div class= "footer-content">
+            <h2>Information</h2>
+        <ul class="info-list">
+            <li><a href= "#index-signup" class= "newslettters" id= "newslettters">Subscribe to our NewsLetters</a></li>
+            <li><a href= "readourpolicy.html" class= "readourpolicy">Read our Policy</a></li>
+            <li><a href= "privatepolicy.html" class= "privatepolicy">Privacy Policy</a></li>
+            <li><a href= "refundreturn-policy.html" id= "refundreturn-policy" class= "refundreturn-policy">Refund/Return Policy</a></li>
+            <li><a href= "termsandconditions.html" class= "termsandconditions">Terms and Conditions</a></li>
+    </ul>
+    </div>
+               
+       <!-----FindUs (Dropdown)----->
+       <div class= "findusdropdown" id="findusdropdown">
+        <h2> Customer Care </h2>
+        <h4><a href= "tel:+27671837207" class="call" onclick="callNav()">067 183 7207</a></h4>
+        <h4><a href= "https://mail.google.com/mail/?view=cm&fs=1&to=info@thutisproject.com" class="email" onclick= "emailNav()">info@thutisproject.com</a></h4>
+        <h4><a href= "https://www.google.com/maps?q=972 Extension 1 M20 Hebron Road, Soshanguve South, Pretoria, 0152, South Africa" target="_blank"> Address: <br> 972 Extension 1 M20 Hebron Road, Soshanguve South, Pretoria, 0152, South Africa </a></h4>
+</div>
+
+    <!-----FindUs----->
+    <div class= "footer-content">
+        <div class="customercare">
+            <h2> Customer Care </h2>
+            <ul>
+            <p><li><a href= "tel:+27671837207"  alt= "Phone Numbers" id= "phonenumbers" onclick= "phonenumbersNav()">067 183 7207</a></li></p>
+            <p><li><a href= "https://mail.google.com/mail/?view=cm&fs=1&to=info@thutisproject.com" alt= "E-mail" id= "email" onclick= "emailNav()">info@thutisproject.com</a></li></p>
+            <p><li><a href= "https://www.google.com/maps?q=972 Extension 1 M20 Hebron Road, Soshanguve South, Pretoria, 0152, South Africa" alt= "Address" id= "address" onclick= "addressNav()">Address 
+<br>972 Extension 1 M20 Hebron Road, <br>Soshanguve South, Pretoria, 0152,<br> South Africa</a></li></p>
+        </ul>
+</div>
+</div>
+
+        <div class= "footer-content">
+        <div class= "social-icons">
+            <h2> Follow Us </h2>
+        <a href=""><i class= "fa fa-facebook" id= "fa fa-facebook"></i>Facebook</a>
+        <a href=""><i class= "fa fa-twitter" id= "fa fa-twitter"></i>Twitter</a>
+        <a href=""><i class= "fa fa-google" id= "fa fa-google"></i>google</a>
+</div>
+</div>
+
+<div class= "footer-content-icons">
+    <div class= "social-icons">
+        <h2> Follow Us </h2>
+    <a href=""><i class= "fa fa-facebook" id= "fa-facebook"></i></a>
+    <a href=""><i class= "fa fa-twitter" id= "fa fa-twitter"></i></a>
+    <a href=""><i class= "fa fa-google" id= "fa fa-google"></i></a>
+</div>
+</div>
+
+<div class= "footer-content">
+<div class= "tradinghours">
+    <hr/>
+    <h2> Trading Hours </h2>
+<p>Mon-Sat: 07h00 - 17h30 </p>
+<p>Sun: 07h00 - 14h00 </p>
+</div>
+</div>
+
+    
+</section>
+
+<!--------Footer------>
+<section>
+<div class= "button-bar">
+                <p>&copy; 2025 Thuti's Project. All rights reserved.</p></div>
+</section>       
+                <section class="footer-developer">
+            <div class= "developer">
+            <h5>Developed by <a href= "Kamogelo Kwetsane" class="developer" id= "developer" onclick= "developerNav()">Kamogelo Ronald Kwetsane</h5></a>
+            </div>
+        </section>
+
+<script src="ShopDepartments.js"></script>
+</body>
+</html>
