@@ -1,0 +1,87 @@
+[
+    {
+        "id": "chickenproducts1",
+        "name": "Broilers",
+        "price": 70,
+        "image": "images/Broilerss-fotor-bg-remover-20250402154827.png"
+    },
+    {
+        "id": "chickenproducts2",
+        "name": "Chicken Intestines ",
+        "price": 25,
+        "image": "images/Chcken intestines-fotor-bg-remover-2025040821197.png"
+    },
+    {
+        "id": "chickenproducts3",
+        "name": "Eggs 30s",
+        "price": 60,
+        "image": "images/Eggs 30s web-fotor-bg-remover-20250327222552.png"
+    },
+    {
+        "id": "chickenproducts4",
+        "name": "Eggs 60s",
+        "price": 110,
+        "image": "images/Eggs 60s.png"
+    },
+    {
+        "id": "chickenproducts5",
+        "name": "Eggs Box",
+        "price": 630,
+        "image": "images/Eggs slideshow-fotor-bg-remover-2025032182636.png"
+    },
+    {
+        "id": "chickenproducts6",
+        "name": "Finisher Chicken Feeds 5Kg",
+        "price": 50,
+        "image": "images/Finisher Checken Feed-fotor-bg-remover-2025040420186.png"
+    },
+    {
+        "id": "chickenproducts7",
+        "name": "Finisher Chicken Feeds 10Kg",
+        "price": 100,
+        "image": "images/Finisher Checken Feed 10kg-fotor-bg-remover-2025032022316.png"
+    },
+    {
+        "id": "chickenproducts8",
+        "name": "Finisher Chicken Feeds 50Kg",
+        "price": 400,
+        "image": "images/Chicken feed 50kg real-fotor-bg-remover-20250408203815.png"
+    },
+    {
+        "id": "chickenproducts9",
+        "name": "Hard body Chickens",
+        "price": 75,
+        "image": "images/Alive_Hard_Body_Chicken-removebg-preview (1).png"
+    },
+    {
+        "id": "chickenproducts10",
+        "name": "Lay Mash Chicken Feeds 5Kg",
+        "price": 50,
+        "image": "images/grower Mixed-fotor-bg-remover-2025032723343.png"
+
+    },
+    {
+        "id": "chickenproducts11",
+        "name": "Lay Mash Chicken Feeds 10Kg",
+        "price": 100,
+        "image": "images/Lay Mash 10 Kg.jpg"
+    },
+    {
+        "id": "chickenproducts12",
+        "name": "Red Star Chickens",
+        "price": 90,
+        "image": "images/HardBody Chicken-fotor-bg-remover-2025032722334.png"
+    },
+    {
+        "id": "chickenproducts13",
+        "name": "Starter Chicken Feeds 5Kg",
+        "price": 50,
+        "image": "images/Chicken_food_web_background_.png-removebg-preview (1).png"
+    },
+    {
+        "id": "chickenproducts14",
+        "name": "Starter Chicken Feeds 10Kg",
+        "price": 100,
+        "image": "images/Dogfood lay-fotor-bg-remover-20250327214114.png"
+    }
+]

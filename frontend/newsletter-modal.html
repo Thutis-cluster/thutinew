@@ -1,0 +1,20 @@
+<!-- newsletter-modal.html -->
+<div id="newsletterModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Subscribe to our Newsletter</h2>
+    <p>Get the latest updates and offers straight to your inbox!</p>
+    <form id="newsletterForm">
+      <input type="text" id="subscriberName" name="name" placeholder="Your Name" required>
+      <input type="email" id="subscriberEmail" name="email" placeholder="Your Email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+
+    <div id="thankYouMessage" style="display:none;">
+      <p>Thanks for subscribing! 🎉</p>
+    </div>
+    <div id="existsMessage" style="display:none; color:red;">
+      <p>Email already subscribed!</p>
+    </div>
+  </div>
+</div>

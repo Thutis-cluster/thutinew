@@ -1,0 +1,298 @@
+[     
+    {
+            "id": "products1",
+            "name": "Beetroot Pack",
+            "price": 15,
+            "image": "images/Packed Beetrot-fotor-bg-remover-20250327232440.png"
+        },
+        {
+            "id": "products2",
+            "name": "Beetroot Sag",
+            "price": 40,
+            "image": "images/Beetrot_Sag-removebg-preview.png"
+        },
+        {
+            "id": "products3",
+            "name": "Broilers",
+            "price": 70,
+            "image": "images/Broilerss-fotor-bg-remover-20250402154827.png"
+        },
+        {
+            "id": "products4",
+            "name": "Butternut",
+            "price": 20,
+            "image": "images/Butternut-fotor-bg-remover-2025040114121.png"
+        },
+        {
+            "id": "products5",
+            "name": "Cabbage Half",
+            "price": 15,
+            "image": "images/Cabbage-fotor-bg-remover-2025040115648.png"
+        },
+        {
+            "id": "products6",
+            "name": "Cabbage Full",
+            "price": 25,
+            "image": "images/Cabbage web-fotor-bg-remover-2025032721937.png"
+        },
+        {
+            "id": "products7",
+            "name": "Carrots Pack",
+            "price": 15,
+            "image": "images/Carrots-fotor-bg-remover-20250401211.png"
+        },
+        {
+            "id": "products8",
+            "name": "Carrots 10Kg",
+            "price": 55,
+            "image": "images/Packed Carrots-fotor-bg-remover-2025032723178.png"
+        },
+        {
+            "id": "products9",
+            "name": "Chicken Intestines ",
+            "price": 25,
+            "image": "images/Chcken intestines-fotor-bg-remover-2025040821197.png"
+        },
+        {
+            "id": "products10",
+            "name": "Cucumbers",
+            "price": 7,
+            "image": "images/Cucumbers-fotor-bg-remover-202504012279.png"
+        },
+        {
+            "id": "products11",
+            "name": "DogMores 5Kg",
+            "price": 90,
+            "image": "images/Dogmor 5Kg-fotor-bg-remover-2025040712157.png"
+        },
+        {
+            "id": "products12",
+            "name": "DogMores 8Kg",
+            "price": 120,
+            "image": "images/DogMor 50Kg-fotor-bg-remover-20250408205434.png"
+        },       
+        {
+            "id": "products13",
+            "name": "DogMores 10Kg",
+            "price": 140,
+            "image": "images/Dof food background move-fotor-bg-remover-2025040341750.png"
+        },
+        {
+            "id": "products14",
+            "name": "DogMores 20Kg",
+            "price": 240,
+            "image": "images/Dog food web-fotor-bg-remover-20250406214526.png"
+        },
+        {
+            "id": "products15",
+            "name": "DogMores 50Kg",
+            "price": 600,
+            "image": "images/Dog food-fotor-bg-remover-20250406214720.png"
+        },
+        {
+            "id": "products16",
+            "name": "Eggs 30s",
+            "price": 60,
+            "image": "images/Eggs 30s web-fotor-bg-remover-20250327222552.png"
+        },
+        {
+            "id": "products17",
+            "name": "Eggs 60s",
+            "price": 110,
+            "image": "images/Eggs 60s.png"
+        },
+        {
+            "id": "products18",
+            "name": "Eggs Box",
+            "price": 630,
+            "image": "images/Eggs slideshow-fotor-bg-remover-2025032182636.png"
+        },
+        {
+            "id": "products19",
+            "name": "Finisher Chicken Feeds 5Kg",
+            "price": 50,
+            "image": "images/Finisher Checken Feed-fotor-bg-remover-2025040420186.png"
+        },
+        {
+            "id": "products20",
+            "name": "Finisher Chicken Feeds 10Kg",
+            "price": 100,
+            "image": "images/Finisher Checken Feed 10kg-fotor-bg-remover-2025032022316.png"
+        },
+        {
+            "id": "products21",
+            "name": "Finisher Chicken Feeds 50Kg",
+            "price": 400,
+            "image": "images/Chicken feed 50kg real-fotor-bg-remover-20250408203815.png"
+        },
+        {
+            "id": "products22",
+            "name": "Green Beans",
+            "price": 15,
+            "image": "images/Green beans-fotor-bg-remover-20250327211436.png"
+        },
+       {
+            "id": "products23",
+            "name": "Green Beans Box",
+            "price": 40,
+            "image": "images/Green Beans Box-fotor-bg-remover-2025040124433.png"
+        },
+        {
+            "id": "products24",
+            "name": "Green Peppers",
+            "price": 8,
+            "image": "images/Peppers packed-fotor-bg-remover-20250327215421.png"
+    
+        },
+        {
+            "id": "products25",
+            "name": "Green Peppers Box",
+            "price": 50,
+            "image": "images/Box Peppers-fotor-bg-remover-202503218342.png"
+        },
+        {
+            "id": "products26",
+            "name": "Hard body Chickens",
+            "price": 75,
+            "image": "images/Alive_Hard_Body_Chicken-removebg-preview (1).png"
+        },
+        {
+            "id": "products27",
+            "name": "Lay Mash Chicken Feeds 5Kg",
+            "price": 50,
+            "image": "images/grower Mixed-fotor-bg-remover-2025032723343.png"
+    
+        },
+        {
+            "id": "products28",
+            "name": "Lay Mash Chicken Feeds 10Kg",
+            "price": 100,
+            "image": "images/Lay Mash 10 Kg.jpg"
+        },
+        {
+            "id": "products29",
+            "name": "Lettuce",
+            "price": 15,
+            "image": "images/Lettuce-fotor-bg-remover-202504014319.png"
+        },
+        {
+            "id": "products30",
+            "name": "Maize Meals 5Kg",
+            "price": 45,
+            "image": "images/Mealie Meal 5Kg-fotor-bg-remover-20250406194721.png"
+        },
+        {
+            "id": "products31",
+            "name": "Maize Meals 10Kg",
+            "price": 75,
+            "image": "images/Mealie Meal 10kg-fotor-bg-remover-20250406194946.png"
+        },    
+        {
+            "id": "products32",
+            "name": "Onions Pack",
+            "price": 15,
+            "image": "images/Onions Pack-fotor-bg-remover-2025032722138.png"
+        },
+        {
+            "id": "products33",
+            "name": "Onions Sag",
+            "price": 35,
+            "image": "images/IMG-20220731-WA0005-fotor-bg-remover-202504014127.png"
+        },
+        {
+            "id": "products34",
+            "name": "Potatoes Pack",
+            "price": 15,
+            "image": "images/Potatoes other-fotor-bg-remover-2025040122439.png"
+        },
+        {
+            "id": "products35",
+            "name": "Potatoes Sag",
+            "price": 90,
+            "image": "images/IMG-20220730-WA0001-fotor-bg-remover-2025040141752.png"
+        },
+        {
+            "id": "products36",
+            "name": "Pumpkins Half",
+            "price": 20,
+            "image": "images/Pumpkins-fotor-bg-remover-2025040134115.png"
+        },
+        {
+            "id": "products37",
+            "name": "Pumpkins Full",
+            "price": 30,
+            "image": "images/Pack Pumpkin-fotor-bg-remover-2025040144253.png"
+        },
+        {
+            "id": "products38",
+            "name": "Red Peppers",
+            "price": 8,
+            "image": "images/Single Red Peppers-fotor-bg-remover-2025040134141.png"
+        },
+        {
+            "id": "products39",
+            "name": "Red Peppers Box",
+            "price": 40,
+            "image": "images/Red Peppers Real Box-fotor-bg-remover-2025040613110.png"
+        },
+        {
+            "id": "products40",
+            "name": "Red Star Chickens",
+            "price": 90,
+            "image": "images/HardBody Chicken-fotor-bg-remover-2025032722334.png"
+        },
+        {
+            "id": "products41",
+            "name": "Starter Chicken Feeds 5Kg",
+            "price": 50,
+            "image": "images/Chicken_food_web_background_.png-removebg-preview (1).png"
+        },
+        {
+            "id": "products42",
+            "name": "Starter Chicken Feeds 10Kg",
+            "price": 100,
+            "image": "images/Dogfood lay-fotor-bg-remover-20250327214114.png"
+        },
+        {
+            "id": "products43",
+            "name": "Sweet Potatoes",
+            "price": 25,
+            "image": "images/Sweet Potatoes1-fotor-bg-remover-2025040133027.png"
+        },
+        {
+            "id": "products44",
+            "name": "Tissues 4s",
+            "price": 20,
+            "image": "images/Tissues 4S-fotor-bg-remover-2025040712547.png"
+        },
+        {
+            "id": "products45",
+            "name": "Tissues 12s",
+            "price": 30,
+            "image": "images/Tissues 12-fotor-bg-remover-2025040712823.png"
+        },
+        {
+            "id": "products46",
+            "name": "Tomatoes Pack",
+            "price": 15,
+            "image": "images/Tomatoes-fotor-bg-remover-2025040132728.png"
+        },
+        {
+            "id": "products47",
+            "name": "Tomatoes Box",
+            "price": 70,
+            "image": "images/IMG-20220730-WA0002-fotor-bg-remover-202504011375.png"
+        },
+        {
+            "id": "products48",
+            "name": "Yellow Pepper Single",
+            "price": 8,
+            "image": "images/Yellow Pepper Single-fotor-bg-remover-2025040143426.png"
+        },
+        {
+            "id": "products49",
+            "name": "Yellow Peppers Box",
+            "price": 40,
+            "image": "images/Box yellow Pepper-fotor-bg-remover-2025032021017.png"
+        }   
+    ]
