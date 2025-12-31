@@ -30,7 +30,7 @@
     <!----------header------->
     <section class= "index-logo">
         <div class= "wrapper">
-            <h1><a href="index.html">thutis</a></h1> 
+            <h1><a href="index.html">thutis</a></h1>
 
  <a href= "mainshop.html" input type= "button" class= "shopnowbtn" id= "shopnowbtn" onclick= "shopNav()" placeholder= "Shop now">View Everything</a>
             
@@ -72,8 +72,6 @@
 
       <!-- Collapsible links (for mobile/hamburger toggle) -->
       <div class="collapsible-links">
-         <a href= "aboutus.html" class= "about" id= "about" >About us</a>                       
-        <a href= "contactus.html" class= "contactus" id= "contactus">Contact Us</a>
         <a href="#tradinghours">Trading hours</a>
       </div>
 
@@ -150,18 +148,64 @@
            <!--------MyAccount (Dropdown)------->
         <section class="footer-socialmedia">
             <div class= "footer-wrapper">
+            <div class= "myaccountdropdown" id= "myaccountdropdown">
+                <h2>Self Service</h2>
+            <a href= "cartPage.html" id= "cartPage" class= "cartPage">Cart </a>
+            <a href= "checkoutpage.html"id= "checkout" class= "checkout"> CheckOut </a>
+            <a href= "contactus.html" id= "contactus" class= "contactus">Contact Us</a>
+        <a href= "javascript:void(0);" class= "icon" onclick= "myAcount()">
+            <i class="fa fa-plus"></i>
+        </a>
+        <a href= "javascript:void(0);" class= "icon1" onclick= "myAcount()">
+            <i class="fa fa-minus"></i>
+        </a>
+        </div>
+
+        <!-----MyAccount----->
+        <div class= "footer-content">
+            <h2 class="selfserv">Self Service</h2>
+            <ul class= "selfserv-list">               
+            <li><a href="cartPage.html" class= "cart" id= "cart" onclick= "cartNav()">Cart</a></li> 
+            <li><a href="checkoutpage.html" class= "checkout" id= "checkout" onclick= "checkoutNav()">CheckOut</a></li>
+            <li><a href= "contactus.html" class= "contactus" id="contactus">Contact Us</a></li>
+        </ul>
+            </div>
+
+            <!------information AboutUs (DropDown)----->
+            <div class= "informationdropdown" id= "Informationdropdown">  
+                <h2>Information</h2>
+                <a href= "#" class="subscribeBtn">Subscribe to our NewsLetters</a>
+                 <a href= "readourpolicy.html" id= "readourpolicy" class= "readourpolicy">Read our Policy</a>
+                <a href= "privatepolicy.html"  id= "privatepolicy" class= "privatepolicy">Privacy Policy</a>
+                <a href= "refundreturn-policy.html" id= "refundreturn-policy" class= "refundreturn-policy">Refund/Return Policy</a>
+                <a href= "termsandconditions.html" id= "termsandconditions" class= "termsandconditions">Terms and Conditions</a>
+                <a href= "javascript:void(0);" class= "icon" onclick= "information()">
+                    <i class="fa fa-plus"></i>
+                </a>
+                <a href= "javascript:void(0);" class= "icon1" onclick= "information()">
+                    <i class="fa fa-minus"></i>
+                </a>
+            </div>
+
+            <!------Information AboutUs----->
+            <div class= "footer-content">
+            <h2>Information</h2>
+        <ul class="info-list">
+            <li><a href= "#index-signup" id= "newslettters" class= "newslettters">Subscribe to our NewsLetters</a></li>
+            <li><a href= "readourpolicy.html" id= "readourpolicy" class= "readourpolicy">Read our Policy</a></li>
+            <li><a href= "privatepolicy.html" id= "privatepolicy" class= "privatepolicy">Privacy Policy</a></li>
+            <li><a href= "refundreturn-policy.html" id= "refundreturn-policy" class= "refundreturn-policy">Refund/Return Policy</a></li>
+            <li><a href= "termsandconditions.html" id= "termsandconditions" class= "termsandconditions">Terms and Conditions</a></li>
+    </ul>
+    </div>
+
        <!-----FindUs (Dropdown)----->
        <div class= "findusdropdown" id="findusdropdown">
         <h2> Customer Care </h2>
         <h4><a href="tel:+27671837207" class="call" onclick="callNav()">067 183 7207</a></h4>
         <h4><a href= "https://mail.google.com/mail/?view=cm&fs=1&to=youribfo@thutisproject.com" class="email" onclick= "emailNav()">info@thutisproject.com</a></h4>
         <h4><a href= "https://www.google.com/maps?q=972 Extension 1 M20 Hebron Road, Soshanguve South, Pretoria, 0152, South Africa" target="_blank"> Address: <br> 972 Extension 1 M20 Hebron Road, Soshanguve South, Pretoria, 0152, South Africa </a></h4>
-<div class= "tradinghours">
-    <h2> Trading Hours </h2>
-<p><u>Mon-Sat</u>: 07h00 - 17h30 </p>
-<p><u>Sun</u>: 07h00 - 14h00 </p>
 </div>
-       </div>
 
     <!-----FindUs----->
     <div class= "footer-content">
