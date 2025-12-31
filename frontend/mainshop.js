@@ -200,9 +200,6 @@ if (filtered.length === 0) {
     item.innerHTML = `
       <img src="${product.image}" alt="${product.name}">
       <h2>${product.name}</h2>
-      <hr/>
-      <div class="price">R${product.price}</div>
-      <button class="addCart">Add to Cart</button>
     `;
     listProductHTML.appendChild(item);
   });
