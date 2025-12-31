@@ -3,13 +3,13 @@
         "id": "chickenproducts1",
         "name": "Broilers",
         "price": 70,
-        "image": "images/Broilerss-fotor-bg-remover-20250402154827.png"
+        "image": "/Broilerss-fotor-bg-remover-20250402154827.png"
     },
     {
         "id": "chickenproducts2",
         "name": "Chicken Intestines ",
         "price": 25,
-        "image": "images/Chcken intestines-fotor-bg-remover-2025040821197.png"
+        "image": "Chcken intestines-fotor-bg-remover-2025040821197.png"
     },
     {
         "id": "chickenproducts3",
