@@ -567,6 +567,11 @@ body.showCart .topnav{
   margin-bottom: 10px;
 }
 
+.price,
+.addCart {
+  display: none !important;
+}
+
 .listProduct .item img {
   width: 90%;
   height: 60%;
