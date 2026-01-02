@@ -1003,7 +1003,7 @@ body.showCart ul.info-list {
   color: white !important;
   float: left;
   margin: 25px;
-  margin-left: 57px;
+  margin-left: 110px;
   padding: 0;
 }
 
@@ -1034,10 +1034,6 @@ body.showCart ul.info-list {
 .footer-content ul {
   text-align: left;
   margin-left: -48px;
-}
-
-.footer-content {
-  margin-left: 70px;
 }
 
 .footer-content li{
