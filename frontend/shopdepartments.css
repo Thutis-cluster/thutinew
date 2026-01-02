@@ -34,10 +34,6 @@ html {
   to   { transform: rotate(360deg); }
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body{
   font-family: "Poppins", sans-serif;
   margin: auto;
@@ -1062,11 +1058,10 @@ body.showCart ul.info-list {
 
 .footer-content {
   display: inline-block;
-  margin-left: 40px !important;
+  margin-left: 57px !important;
   color: white !important;
   float: left;
   margin: 25px;
-  margin-left: 20px;
   padding: 0;
 }
 
