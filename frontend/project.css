@@ -151,13 +151,7 @@ svg {
 }
 
 header {
-  float: right;
-  margin-right: 130px;
-  margin-top: -17px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 0;
+display: none
 }
 
 header .icon-cart {
@@ -573,17 +567,12 @@ transition: transform .5s;
   margin-top: 0px;
 }
 
+.listProduct .price{
+  display: none;
+}
+
 .listProduct .item button {
-  display: block;
-  align-items: center;
-  margin: auto;
-  background-color: #353432;
-  color: #eee;
-  padding: 5px 10px;
-  border-radius: 20px;
-  margin-top: 5px;
-  border: none;
-  cursor: pointer;
+  display: none;
 }
 
  @media screen and (max-width:600px) {
