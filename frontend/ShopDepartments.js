@@ -48,6 +48,65 @@ const loadPageProducts = async (file) => {
     }
 };
 
+const pages = document.querySelectorAll(".page");
+const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
+const indicator = document.getElementById("pageIndicator");
+
+let currentPage = 0;
+
+function updatePages() {
+    pages.forEach((page, index) => {
+        page.classList.remove("active", "flipped");
+
+        if (index === currentPage) {
+            page.classList.add("active");
+        } else if (index < currentPage) {
+            page.classList.add("flipped");
+        }
+    });
+
+    indicator.textContent = `${currentPage + 1} / ${pages.length}`;
+}
+
+nextBtn.onclick = () => {
+    if (currentPage < pages.length - 1) {
+        currentPage++;
+        updatePages();
+    }
+};
+
+prevBtn.onclick = () => {
+    if (currentPage > 0) {
+        currentPage--;
+        updatePages();
+    }
+};
+
+updatePages();
+
+const loadCategory = async (file, containerId) => {
+    const res = await fetch(file);
+    const data = await res.json();
+
+    const container = document.getElementById(containerId);
+
+    data.forEach(product => {
+        const div = document.createElement("div");
+        div.className = "product";
+        div.innerHTML = `
+            <img src="${product.image}" alt="">
+            <p>${product.name}</p>
+        `;
+        container.appendChild(div);
+    });
+};
+
+// CALL THIS
+loadCategory('vegetable-products.json', 'page1');
+loadCategory('chicken-products.json', 'page2');
+loadCategory('dogfood&tissues-products.json', 'page3');
+                   
 // 🎤 Speak
 function speak(text) {
     const synth = window.speechSynthesis;
