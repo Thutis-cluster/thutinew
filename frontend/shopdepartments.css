@@ -159,34 +159,6 @@ svg {
  width: 30px;
 }
 
-.shopnow {
-   float: right;
-    margin-top: 45px;
-    margin-bottom: 6px;
-    margin-right: 124px;
-}
-
-.shopnowbtn {
-    float: right;
-    padding: 12px 28px;
-    background: #04aa6d;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.25s ease;
-    box-shadow: 0 0 0 rgba(4,170,109,0.7);
-}
-
-.shopnowbtn:hover {
-    background: #059862;
-    box-shadow: 0 0 12px rgba(4,170,109,0.7), 
-                0 0 24px rgba(4,170,109,0.5);
-    transform: translateY(-2px);
-}
-
 header {
   float: right;
   margin-right: 130px;
@@ -651,7 +623,7 @@ body {
   box-shadow: 5px 10px 30px rgba(0,0,0,0.2);
   transform-origin: left;
   transform: rotateY(90deg);
-  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* realistic flip */
+transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1); /* ease out + bounce */
 }
 
 .page.active { transform: rotateY(0deg); z-index: 2; }
