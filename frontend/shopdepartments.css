@@ -219,7 +219,6 @@ header {
   margin-right: 300px;
 }
    
-
   #homepageSearchForm {
     width: 100%;
     margin-top: 15px;
@@ -265,28 +264,6 @@ header {
     50% { transform: scale(1.05); opacity: 1; }
     100% { transform: scale(0.95); opacity: 0.9; }
 }
-
-.shopnow {
-  margin-top: -7px;
-  margin-right: 90px;
-}
-
-  .shopnowbtn {
-        padding: 10px 20px;          /* slightly smaller padding */
-        font-size: 14px;             /* cleaner mobile size */
-        border-radius: 6px;          /* more compact corners */
-        width: auto;                 /* stays natural size */
-        display: inline-block;
-        margin: 8px 0;               /* spacing for small screens */
-        box-shadow: none;            /* flatter modern mobile look */
-        transform: none;
-    }
-
-  .shopnowbtn:hover {
-        box-shadow: 0 0 8px rgba(4,170,109,0.6);
-        background: #059862;
-        transform: none;             /* disable hover jump (mobile friendly) */
-    }
  }
 
 /*--------Home Ribbon------*/
@@ -647,6 +624,82 @@ header {
   background: var(--primary);
   border-radius: 30px;
   padding: 10px 20px;
+}
+
+body {
+  background: #f4f1ea; /* paper tone */
+  font-family: "Poppins", sans-serif;
+}
+
+/* BOOK */
+.book {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  margin: 120px auto;
+  perspective: 2000px;
+}
+
+/* PAGE */
+.page {
+  position: absolute;
+  width: 100%;
+  min-height: 500px;
+  background: #fffdf7;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transform-origin: left;
+  transform: rotateY(90deg);
+  transition: transform 0.6s ease;
+}
+
+/* ACTIVE PAGE */
+.page.active {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+/* FLIP OUT */
+.page.flipped {
+  transform: rotateY(-180deg);
+  z-index: 1;
+}
+
+/* TITLE */
+.page h1 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #2e7d32;
+}
+
+/* GRID */
+.page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* PRODUCT */
+.product {
+  text-align: center;
+}
+
+.product img {
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+}
+
+.product p {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .page-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .badge {
