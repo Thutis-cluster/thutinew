@@ -106,6 +106,55 @@ const loadCategory = async (file, containerId) => {
 loadCategory('vegetable-products.json', 'page1');
 loadCategory('chicken-products.json', 'page2');
 loadCategory('dogfood&tissues-products.json', 'page3');
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+const book = document.querySelector('.book');
+
+book.addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+book.addEventListener('touchend', e => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleGesture();
+});
+
+function handleGesture() {
+  const threshold = 50; // minimum swipe distance
+  if (touchEndX < touchStartX - threshold) { // swipe left → next
+    if (currentPage < pages.length - 1) currentPage++;
+  }
+  if (touchEndX > touchStartX + threshold) { // swipe right → prev
+    if (currentPage > 0) currentPage--;
+  }
+  updatePages();
+  playFlipSound();
+}
+
+const flipSound = new Audio('assets/flip.mp3');
+
+function playFlipSound() {
+  flipSound.currentTime = 0;
+  flipSound.play();
+}
+
+nextBtn.onclick = () => {
+  if (currentPage < pages.length - 1) {
+    currentPage++;
+    updatePages();
+    playFlipSound();
+  }
+};
+
+prevBtn.onclick = () => {
+  if (currentPage > 0) {
+    currentPage--;
+    updatePages();
+    playFlipSound();
+  }
+};
                    
 // 🎤 Speak
 function speak(text) {
