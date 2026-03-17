@@ -645,26 +645,18 @@ body {
   position: absolute;
   width: 100%;
   min-height: 500px;
-  background: #fffdf7;
+  background: #fffdf7 url('images/paper-texture.png') repeat; /* Add paper texture */
   border-radius: 10px;
   padding: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 5px 10px 30px rgba(0,0,0,0.2);
   transform-origin: left;
   transform: rotateY(90deg);
-  transition: transform 0.6s ease;
+  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* realistic flip */
 }
 
-/* ACTIVE PAGE */
-.page.active {
-  transform: rotateY(0deg);
-  z-index: 2;
-}
+.page.active { transform: rotateY(0deg); z-index: 2; }
 
-/* FLIP OUT */
-.page.flipped {
-  transform: rotateY(-180deg);
-  z-index: 1;
-}
+.page.flipped { transform: rotateY(-180deg); z-index: 1; }
 
 /* TITLE */
 .page h1 {
@@ -694,6 +686,16 @@ body {
 .product p {
   font-size: 14px;
   margin-top: 8px;
+}
+
+.page::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 50px; height: 100%;
+  background: linear-gradient(to left, rgba(0,0,0,0.05), transparent);
+  border-radius: 0 10px 10px 0;
+  pointer-events: none;
 }
 
 @media (max-width: 600px) {
