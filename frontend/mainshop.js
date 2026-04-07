@@ -424,6 +424,78 @@ btn.addEventListener("click", () => {
     document.body.classList.toggle("leaflet-mode");
 });
 
+const leafletBtn = document.getElementById("leafletBtn");
+const body = document.body;
+const flipbook = document.getElementById("flipbook");
+
+let currentPage = 0;
+let pages = [];
+
+leafletBtn.addEventListener("click", () => {
+    body.classList.toggle("leaflet-mode");
+
+    if (body.classList.contains("leaflet-mode")) {
+        buildFlipbook();
+    } else {
+        flipbook.innerHTML = "";
+        currentPage = 0;
+    }
+});
+
+function buildFlipbook() {
+    flipbook.innerHTML = "";
+
+    const allProducts = document.querySelectorAll(".listProduct .item");
+
+    let page;
+    allProducts.forEach((item, index) => {
+
+        if (index % 9 === 0) {
+            page = document.createElement("div");
+            page.className = "page";
+
+            const content = document.createElement("div");
+            content.className = "page-content";
+
+            const grid = document.createElement("div");
+            grid.className = "listProduct";
+
+            content.appendChild(grid);
+            page.appendChild(content);
+            flipbook.appendChild(page);
+
+            pages.push(page);
+        }
+
+        const clone = item.cloneNode(true);
+        page.querySelector(".listProduct").appendChild(clone);
+    });
+}
+
+function showPage(index) {
+    pages.forEach((page, i) => {
+        if (i < index) {
+            page.classList.add("flipped");
+        } else {
+            page.classList.remove("flipped");
+        }
+    });
+}
+
+function nextPage() {
+    if (currentPage < pages.length) {
+        currentPage++;
+        showPage(currentPage);
+    }
+}
+
+function prevPage() {
+    if (currentPage > 0) {
+        currentPage--;
+        showPage(currentPage);
+    }
+}
+
 // 🎤 Voice input (Speech Recognition)
 if ('webkitSpeechRecognition' in window) {
   const recognition = new webkitSpeechRecognition();
