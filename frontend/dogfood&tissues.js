@@ -150,7 +150,6 @@ const addToCart = (product_id) => {
     addCartToHTML();
 };
 
-
 const addCartToMemory = () => {
     localStorage.setItem('cart', JSON.stringify(carts));
 };
@@ -373,6 +372,12 @@ function setupNewsletterModal() {
     }, 3000);
   });
 }
+
+const btn = document.getElementById("leafletBtn");
+
+btn.addEventListener("click", () => {
+    document.body.classList.toggle("leaflet-mode");
+});
 
 // ✅ Voice Assistant Only — Does not change existing addToCart logic
 if ('webkitSpeechRecognition' in window) {
