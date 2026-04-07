@@ -419,12 +419,6 @@ searchInput?.addEventListener('keyup', () => {
 // 🔄 Run App
 document.addEventListener('DOMContentLoaded', initApp);
 
-const btn = document.getElementById("leafletBtn");
-
-btn.addEventListener("click", () => {
-    document.body.classList.toggle("leaflet-mode");
-});
-
 const leafletBtn = document.getElementById("leafletBtn");
 const body = document.body;
 const flipbook = document.getElementById("flipbook");
