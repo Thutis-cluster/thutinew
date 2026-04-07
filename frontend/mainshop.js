@@ -1,7 +1,6 @@
 let listProducts = [];
 let allProducts = [];
 let carts = [];
-pages = [];
 
 const body = document.body;
 const jsonFile = 'mainshop-products.json';
@@ -53,7 +52,6 @@ const loadAllProducts = async () => {
 
   allProducts = combined;
 };
-
 
 // 🧼 Deduplicate cart by product name
 const deduplicateCart = () => {
@@ -420,7 +418,6 @@ searchInput?.addEventListener('keyup', () => {
 document.addEventListener('DOMContentLoaded', initApp);
 
 const leafletBtn = document.getElementById("leafletBtn");
-const body = document.body;
 const flipbook = document.getElementById("flipbook");
 
 let currentPage = 0;
@@ -698,17 +695,6 @@ function myFunction() {
         closeDropdown();
     }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  // Load the modal HTML dynamically
-  fetch("newsletter-modal.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("modalContainer").innerHTML = html;
-      setupNewsletterModal();
-    })
-    .catch(err => console.error("Modal failed to load:", err));
-});
 
 function setupNewsletterModal() {
   const modal = document.getElementById("newsletterModal");
