@@ -446,6 +446,8 @@ function buildFlipbook() {
             page = document.createElement("div");
             page.className = "page";
 
+page.style.zIndex = 100 - pages.length;
+          
             const content = document.createElement("div");
             content.className = "page-content";
 
