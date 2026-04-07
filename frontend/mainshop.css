@@ -39,7 +39,8 @@ body{
   transition: transform .5s;
   user-select: none;
   max-height: fit-content;
-  }
+  overflow-x: hidden;
+}
 
   body.showCart .index-logo{
     transform: translateX(-376px);
@@ -562,7 +563,8 @@ body.showCart .topnav{
 /* ============================= */
 
 body.leaflet-mode {
-    overflow: hidden;
+   overflow-x: hidden;
+    overflow-y: auto; /* allow vertical scroll */
 }
 
 /* Hide normal shop */
@@ -637,10 +639,31 @@ body.leaflet-mode .flipbook {
 }
 
 /* Responsive grid */
-@media (max-width: 600px) {
-    .flipbook .listProduct {
-        grid-template-columns: repeat(2, 1fr);
-    }
+@media screen and (max-width: 600px) {
+  body {
+  -webkit-overflow-scrolling: touch;
+}
+  
+  .listProduct {
+    grid-template-columns: repeat(2, 1fr); /* 👈 2 per row */
+    gap: 12px;
+    padding: 0 10px;
+  }
+
+  .listProduct .item {
+    max-width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .listProduct .item img {
+    height: 120px; /* 👈 smaller images */
+    object-fit: contain;
+  }
+
+  .listProduct .item h2 {
+    font-size: 14px;
+  }
 }
 
 /* Cards */
