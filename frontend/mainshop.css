@@ -557,59 +557,106 @@ body.showCart .topnav{
   color: orange;
  }
 }
-
 /* ============================= */
-/* 📖 FLIPBOOK ONLY IN LEAFLET MODE */
+/* 📖 RESPONSIVE FLIPBOOK FIX */
 /* ============================= */
 
 body.leaflet-mode {
     overflow: hidden;
 }
 
-/* Hide normal layout */
+/* Hide normal shop */
 body.leaflet-mode .products-section {
     display: none;
 }
 
-/* Flipbook container */
+/* Flipbook wrapper */
 .flipbook {
     display: none;
 }
 
 body.leaflet-mode .flipbook {
     display: block;
-    width: 794px;
-    height: 1123px;
-    margin: 40px auto;
-    perspective: 2000px;
+
+    /* 🔥 RESPONSIVE MAGIC */
+    width: min(95vw, 794px);
+    height: calc(min(95vw, 794px) * 1.414); /* A4 ratio */
+
+    margin: 20px auto;
+    perspective: 1500px;
     position: relative;
 }
 
 /* Pages */
 .flipbook .page {
+    position: absolute;
     width: 100%;
     height: 100%;
-    position: absolute;
     background: white;
+
+    top: 0;
+    left: 0;
+
     transform-origin: left;
+    transform-style: preserve-3d;
     transition: transform 0.8s ease;
-    border: 1px solid #ccc;
+
+    border-radius: 10px;
+    overflow: hidden; /* 🔥 FIX overflow */
+    backface-visibility: hidden; /* 🔥 FIX back bleed */
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
+/* Prevent back showing through */
+.flipbook .page::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: white;
+    z-index: -1;
+}
+
+/* Flip animation */
 .flipbook .page.flipped {
     transform: rotateY(-180deg);
 }
 
 /* Page content */
 .flipbook .page-content {
-    padding: 20px;
+    padding: 15px;
+    height: 100%;
+    overflow: hidden;
 }
 
-/* Grid inside pages */
+/* Grid */
 .flipbook .listProduct {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    gap: 10px;
+}
+
+/* Responsive grid */
+@media (max-width: 600px) {
+    .flipbook .listProduct {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Cards */
+.flipbook .item {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+/* Images */
+.flipbook .item img {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
 }
 
 /* Buttons */
@@ -623,8 +670,8 @@ body.leaflet-mode .flip-controls {
 }
 
 .flip-controls button {
-    padding: 10px 20px;
-    margin: 10px;
+    padding: 10px 15px;
+    margin: 5px;
     background: black;
     color: white;
     border: none;
