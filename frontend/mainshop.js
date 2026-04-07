@@ -1,6 +1,7 @@
 let listProducts = [];
 let allProducts = [];
 let carts = [];
+pages = [];
 
 const body = document.body;
 const jsonFile = 'mainshop-products.json';
