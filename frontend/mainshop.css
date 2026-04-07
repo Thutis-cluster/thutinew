@@ -572,6 +572,10 @@ body.leaflet-mode .products-section {
     display: none;
 }
 
+body.leaflet-mode form#searchForm {
+    top: -18px;
+}
+
 /* Flipbook wrapper */
 .flipbook {
     display: none;
@@ -586,6 +590,7 @@ body.leaflet-mode .flipbook {
 
     margin: 20px auto;
     perspective: 1500px;
+    margin-top: 145px;
     position: relative;
 }
 
