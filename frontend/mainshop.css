@@ -588,92 +588,31 @@ body.leaflet-mode .index-logo h1 {
     text-align: center;
 }
 
-/* Product grid becomes vertical like a flyer */
+/* ✅ LEAFLET GRID FIX */
 body.leaflet-mode .listProduct {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr); /* 3 per row */
+    gap: 25px;
+    justify-items: center;
 }
 
-/* Product cards become bigger */
 body.leaflet-mode .listProduct .item {
-    width: 80%;
-    max-width: 400px;
+    width: 100%;
+    max-width: 280px;
     background: #fff;
-    border: 1px solid #ccc;
-}
-
-/* Images cleaner */
-body.leaflet-mode .listProduct .item img {
-    height: 250px;
-    object-fit: contain;
-}
-
-/* Center container */
-body.leaflet-mode .container {
-    margin-top: 40px !important;
-    max-width: 700px;
-}
-
-/* Make it print-friendly */
-@media print {
-    body {
-        background: white;
-    }
-
-    .topnav,
-    .cartTab,
-    .footer-socialmedia,
-    .button-bar {
-        display: none !important;
-    }
-}
-
-/* ===== LEAFLET MODE ===== */
-body.leaflet-mode {
-    background: white;
-    color: black;
-}
-
-/* Hide unnecessary UI */
-body.leaflet-mode .topnav,
-body.leaflet-mode .cartTab,
-body.leaflet-mode .footer-socialmedia,
-body.leaflet-mode .button-bar,
-body.leaflet-mode .icon-cart,
-body.leaflet-mode #searchForm,
-body.leaflet-mode .shopnowbtn {
-    display: none !important;
-}
-
-/* Header simplified */
-body.leaflet-mode .index-logo {
-    position: relative;
-    justify-content: center;
-    box-shadow: none;
-    background: white;
-}
-
-body.leaflet-mode .index-logo h1 {
-    font-size: 40px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
     text-align: center;
 }
 
-/* Product grid becomes vertical like a flyer */
-body.leaflet-mode .listProduct {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-}
-
-/* Product cards become bigger */
-body.leaflet-mode .listProduct .item {
-    width: 80%;
-    max-width: 400px;
-    background: #fff;
-    border: 1px solid #ccc;
+body.leaflet-mode .item button {
+    display: inline-block !important;
+    padding: 8px 12px;
+    background: #04aa6d;
+    color: white;
+    border: none;
+    border-radius: 6px;
 }
 
 /* Images cleaner */
@@ -699,6 +638,20 @@ body.leaflet-mode .container {
     .footer-socialmedia,
     .button-bar {
         display: none !important;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    body.leaflet-mode .listProduct {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    body.leaflet-mode .listProduct {
+        grid-template-columns: 1fr;
     }
 }
 
