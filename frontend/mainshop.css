@@ -559,145 +559,76 @@ body.showCart .topnav{
 }
 
 /* ============================= */
-/* 📄 LEAFLET / CATALOGUE MODE */
+/* 📖 FLIPBOOK ONLY IN LEAFLET MODE */
 /* ============================= */
 
 body.leaflet-mode {
-    background: white;
-    color: black;
-    font-family: Arial, sans-serif;
+    overflow: hidden;
 }
 
-/* Hide unnecessary UI */
-body.leaflet-mode .topnav,
-body.leaflet-mode .cartTab,
-body.leaflet-mode .footer-socialmedia,
-body.leaflet-mode .button-bar,
-body.leaflet-mode .icon-cart,
-body.leaflet-mode #searchForm,
-body.leaflet-mode .shopnowbtn {
-    display: none !important;
+/* Hide normal layout */
+body.leaflet-mode .products-section {
+    display: none;
 }
 
-/* Header */
-body.leaflet-mode .index-logo {
-    text-align: center;
-    background: white;
-    box-shadow: none;
+/* Flipbook container */
+.flipbook {
+    display: none;
 }
 
-body.leaflet-mode .index-logo h1 {
-    font-size: 36px;
-    margin: 10px 0;
-}
-
-/* Container */
-body.leaflet-mode .container {
-    max-width: 1000px;
-    margin: 20px auto;
-}
-
-/* ============================= */
-/* 🛍 PRODUCT GRID (CATALOGUE) */
-/* ============================= */
-
-body.leaflet-mode .listProduct {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-/* Product Card */
-body.leaflet-mode .listProduct .item {
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 10px;
+body.leaflet-mode .flipbook {
+    display: block;
+    width: 794px;
+    height: 1123px;
+    margin: 40px auto;
+    perspective: 2000px;
     position: relative;
-    text-align: center;
-    page-break-inside: avoid;
 }
 
-/* Product Image */
-body.leaflet-mode .listProduct .item img {
+/* Pages */
+.flipbook .page {
     width: 100%;
-    height: 180px;
-    object-fit: contain;
-}
-
-/* Product Name */
-body.leaflet-mode .listProduct .item h2 {
-    font-size: 16px;
-    margin: 10px 0 5px;
-}
-
-/* ============================= */
-/* 💰 PRICE TAG STYLE */
-/* ============================= */
-
-body.leaflet-mode .price {
-    display: inline-block;
-    background: #e60023;
-    color: white;
-    padding: 6px 10px;
-    font-weight: bold;
-    font-size: 16px;
-    border-radius: 4px;
-    margin-top: 5px;
-}
-
-/* ============================= */
-/* 🔥 BADGES (SALE / NEW) */
-/* ============================= */
-
-body.leaflet-mode .badge {
+    height: 100%;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    background: white;
+    transform-origin: left;
+    transition: transform 0.8s ease;
+    border: 1px solid #ccc;
+}
+
+.flipbook .page.flipped {
+    transform: rotateY(-180deg);
+}
+
+/* Page content */
+.flipbook .page-content {
+    padding: 20px;
+}
+
+/* Grid inside pages */
+.flipbook .listProduct {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+/* Buttons */
+.flip-controls {
+    display: none;
+}
+
+body.leaflet-mode .flip-controls {
+    display: block;
+    text-align: center;
+}
+
+.flip-controls button {
+    padding: 10px 20px;
+    margin: 10px;
     background: black;
     color: white;
-    padding: 4px 8px;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-body.leaflet-mode .badge.sale {
-    background: #e60023;
-}
-
-body.leaflet-mode .badge.new {
-    background: #007bff;
-}
-
-/* ============================= */
-/* 🖨 PRINT SETTINGS (A4) */
-/* ============================= */
-
-@page {
-    size: A4;
-    margin: 10mm;
-}
-
-@media print {
-    body {
-        background: white;
-    }
-
-    /* Ensure proper grid on print */
-    .listProduct {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-    }
-
-    /* Avoid breaking product cards */
-    .item {
-        page-break-inside: avoid;
-    }
-
-    /* Header spacing */
-    .index-logo h1 {
-        font-size: 28px;
-    }
+    border: none;
+    cursor: pointer;
 }
 
 /*-----------items-----------*/
