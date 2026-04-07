@@ -424,50 +424,77 @@ let currentPage = 0;
 let pages = [];
 
 leafletBtn.addEventListener("click", () => {
-    body.classList.toggle("leaflet-mode");
-
-    if (body.classList.contains("leaflet-mode")) {
-        buildFlipbook();
-    } else {
-        flipbook.innerHTML = "";
-        currentPage = 0;
-    }
+    body.classList.add("leaflet-mode");
+    buildFlipbook();
+    showPage(0);
 });
 
 function buildFlipbook() {
     flipbook.innerHTML = "";
+    pages = [];
 
-    const allProducts = document.querySelectorAll(".listProduct .item");
+    // 👉 1. ADD COVER PAGE FIRST
+    const cover = document.createElement("div");
+    cover.className = "page cover";
+    cover.innerHTML = `
+        <div class="cover-content">
+            <img src="images/logo slogan-fotor-bg-remover-202503272309.png" class="cover-logo"/>
+            <h1>Thuti's Store</h1>
+            <p>Fresh • Affordable • Local</p>
+        </div>
+    `;
+    flipbook.appendChild(cover);
+    pages.push(cover);
 
-    let page;
-    allProducts.forEach((item, index) => {
+    // 👉 2. GROUP PRODUCTS BY CATEGORY
+    const grouped = {};
 
-        if (index % 9 === 0) {
-            page = document.createElement("div");
-            page.className = "page";
+    listProducts.forEach(p => {
+        if (!grouped[p.category]) grouped[p.category] = [];
+        grouped[p.category].push(p);
+    });
 
-page.style.zIndex = 100 - pages.length;
-          
-            const content = document.createElement("div");
-            content.className = "page-content";
+    // 👉 3. CREATE PAGES PER CATEGORY
+    Object.keys(grouped).forEach(category => {
 
-            const grid = document.createElement("div");
-            grid.className = "listProduct";
+        const products = grouped[category];
 
-            content.appendChild(grid);
-            page.appendChild(content);
-            flipbook.appendChild(page);
+        let page;
+        products.forEach((product, index) => {
 
-            pages.push(page);
-        }
+            if (index % 6 === 0) {
+                page = document.createElement("div");
+                page.className = "page";
 
-        const clone = item.cloneNode(true);
-        page.querySelector(".listProduct").appendChild(clone);
+                page.innerHTML = `
+                  <div class="page-content">
+                    <h2>${category}</h2>
+                    <div class="grid"></div>
+                  </div>
+                `;
+
+                flipbook.appendChild(page);
+                pages.push(page);
+            }
+
+            const item = document.createElement("div");
+            item.className = "item";
+            item.innerHTML = `
+                <img src="${product.image}">
+                <h3>${product.name}</h3>
+                <p>R${product.price}</p>
+            `;
+
+            page.querySelector(".grid").appendChild(item);
+        });
+
     });
 }
 
 function showPage(index) {
     pages.forEach((page, i) => {
+        page.style.zIndex = pages.length - i;
+
         if (i < index) {
             page.classList.add("flipped");
         } else {
@@ -489,6 +516,22 @@ function prevPage() {
         showPage(currentPage);
     }
 }
+
+let startX = 0;
+
+flipbook.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+});
+
+flipbook.addEventListener("touchend", (e) => {
+    let endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 50) {
+        nextPage(); // swipe left
+    } else if (endX - startX > 50) {
+        prevPage(); // swipe right
+    }
+});
 
 // 🎤 Voice input (Speech Recognition)
 if ('webkitSpeechRecognition' in window) {
