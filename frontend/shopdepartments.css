@@ -524,6 +524,78 @@ body.showCart .topnav{
   }
 }
 
+/* ===== LEAFLET MODE ===== */
+body.leaflet-mode {
+    background: white;
+    color: black;
+}
+
+/* Hide unnecessary UI */
+body.leaflet-mode .topnav,
+body.leaflet-mode .cartTab,
+body.leaflet-mode .footer-socialmedia,
+body.leaflet-mode .button-bar,
+body.leaflet-mode .icon-cart,
+body.leaflet-mode #searchForm,
+body.leaflet-mode .shopnowbtn {
+    display: none !important;
+}
+
+/* Header simplified */
+body.leaflet-mode .index-logo {
+    position: relative;
+    justify-content: center;
+    box-shadow: none;
+    background: white;
+}
+
+body.leaflet-mode .index-logo h1 {
+    font-size: 40px;
+    text-align: center;
+}
+
+/* Product grid becomes vertical like a flyer */
+body.leaflet-mode .listProduct {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Product cards become bigger */
+body.leaflet-mode .listProduct .item {
+    width: 80%;
+    max-width: 400px;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+/* Images cleaner */
+body.leaflet-mode .listProduct .item img {
+    height: 250px;
+    object-fit: contain;
+}
+
+/* Center container */
+body.leaflet-mode .container {
+    margin-top: 40px !important;
+    max-width: 700px;
+}
+
+/* Make it print-friendly */
+@media print {
+    body {
+        background: white;
+    }
+
+    .topnav,
+    .cartTab,
+    .footer-socialmedia,
+    .button-bar {
+        display: none !important;
+    }
+}
+
 /*----Departments-----*/
 body.showCart .container {
   width: 900px;
@@ -1551,7 +1623,6 @@ body.showCart .footer-developer h5{
   color: #f18930;
   }
 }
-
 
 /*-------Footer 600px Screen-----*/
 @media screen and (max-width:600px) {
