@@ -6,8 +6,6 @@ const iconCart = document.querySelector('.icon-cart');
 const closeCart = document.querySelector('.close');
 const body = document.querySelector('body');
 const listProductHTML = document.querySelector('.listProduct');
-const listCartHTML = document.querySelector('.listCart');
-const iconCartSpan = document.querySelector('.icon-cart span');
 
 // Preloader
 window.addEventListener('load', function () {
@@ -145,148 +143,10 @@ document.querySelectorAll('.listProduct').forEach(section => {
     });
 });
 
+const btn = document.getElementById("leafletBtn");
 
-// Add to cart logic
-const addToCart = (product_id) => {
-    const product = allProducts.find(p => p.id === product_id);
-    if (!product) return;
-
-    const index = carts.findIndex(item => {
-        const cartProduct = allProducts.find(p => p.id === item.product_id);
-        return cartProduct && cartProduct.name === product.name;
-    });
-
-    if (index === -1) {
-        carts.push({ product_id, quantity: 1 });
-    } else {
-        carts[index].quantity += 1;
-    }
-
-    addCartToMemory();
-    addCartToHTML();
-};
-
-// Save cart to memory
-const addCartToMemory = () => {
-    localStorage.setItem('cart', JSON.stringify(carts));
-};
-
-// Render cart items to HTML
-const addCartToHTML = () => {
-    listCartHTML.innerHTML = '';
-    let totalQuantity = 0;
-    let grandTotal = 0;
-
-    const fullCartItems = carts.map(cart => {
-        const product = allProducts.find(p => p.id === cart.product_id);
-        return product ? { ...cart, product } : null;
-    }).filter(item => item !== null);
-
-    fullCartItems.sort((a, b) => a.product.name.localeCompare(b.product.name));
-
-    fullCartItems.forEach(cart => {
-        const { product, quantity } = cart;
-        const totalPrice = product.price * quantity;
-        grandTotal += totalPrice;
-        totalQuantity += quantity;
-
-        const item = document.createElement('div');
-        item.classList.add('item');
-        item.dataset.id = cart.product_id;
-        item.innerHTML = `
-            <div class="image"><img src="${product.image}" alt=""></div>
-            <div class="name">${product.name}</div>
-            <div class="totalPrice">R${totalPrice}</div>
-            <div class="quantity">
-                <span class="minus"> < </span>
-                <span>${quantity}</span>
-                <span class="plus"> > </span>
-            </div>
-        `;
-        listCartHTML.appendChild(item);
-    });
-
-    updateCartIcon(totalQuantity);
-
-    const grandTotalDiv = document.querySelector('.cart-grandtotal');
-    if (grandTotalDiv) {
-        grandTotalDiv.innerHTML = `
-            <hr/>
-            <div class="totalRow">
-                <strong>Total:</strong>
-                <span>R${grandTotal}</span>
-            </div>
-        `;
-    }
-};
-
-// Automatically update cart icon span
-const updateCartIcon = (quantity = null) => {
-    if (quantity === null) {
-        // recalculate from stored cart if not passed
-        const storedCart = localStorage.getItem('cart');
-        if (storedCart) {
-            const parsedCart = JSON.parse(storedCart);
-            quantity = parsedCart.reduce((sum, item) => sum + item.quantity, 0);
-        } else {
-            quantity = 0;
-        }
-    }
-    iconCartSpan.innerText = quantity;
-};
-
-// Quantity change events
-listCartHTML.addEventListener('click', (e) => {
-    const product_id = e.target.closest('.item')?.dataset?.id;
-    if (!product_id) return;
-
-    if (e.target.classList.contains('minus')) {
-        changeQuantity(product_id, 'minus');
-    } else if (e.target.classList.contains('plus')) {
-        changeQuantity(product_id, 'plus');
-    }
-});
-
-// Increase/decrease item quantity
-const changeQuantity = (product_id, type) => {
-    const index = carts.findIndex(item => item.product_id === product_id);
-    if (index >= 0) {
-        if (type === 'plus') {
-            carts[index].quantity += 1;
-        } else {
-            carts[index].quantity -= 1;
-            if (carts[index].quantity <= 0) {
-                carts.splice(index, 1);
-            }
-        }
-        addCartToMemory();
-        addCartToHTML();
-    }
-};
-
-// Mobile vs Desktop cart behavior
-iconCart.addEventListener('click', function (e) {
-    e.preventDefault();
-    if (window.innerWidth <= 800) {
-        window.location.href = 'cartPage.html';
-    } else {
-        body.classList.toggle('showCart');
-    }
-});
-
-closeCart.addEventListener('click', () => {
-    body.classList.remove('showCart');
-});
-
-// 🔄 Sync cart icon across tabs/pages in real time
-window.addEventListener('storage', (event) => {
-    if (event.key === 'cart') {
-        const storedCart = localStorage.getItem('cart');
-        if (storedCart) {
-            carts = JSON.parse(storedCart);
-            addCartToHTML();
-        }
-    }
+btn.addEventListener("click", () => {
+    document.body.classList.toggle("leaflet-mode");
 });
 
 // NewsLetter Modal
