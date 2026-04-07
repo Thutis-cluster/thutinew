@@ -558,152 +558,204 @@ body.showCart .topnav{
   color: orange;
  }
 }
+
 /* ============================= */
-/* 📖 RESPONSIVE FLIPBOOK FIX */
+/* 📖 FLIPBOOK FULL SYSTEM */
 /* ============================= */
 
 body.leaflet-mode {
-   overflow-x: hidden;
-    overflow-y: auto; /* allow vertical scroll */
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Hide normal shop */
 body.leaflet-mode .products-section {
-    display: none;
+  display: none;
 }
 
 body.leaflet-mode form#searchForm {
-    top: -18px;
+  top: -18px;
 }
 
-/* Flipbook wrapper */
+/* ============================= */
+/* 📕 FLIPBOOK WRAPPER */
+/* ============================= */
+
 .flipbook {
-    display: none;
+  display: none;
 }
 
 body.leaflet-mode .flipbook {
-    display: block;
+  display: block;
 
-    /* 🔥 RESPONSIVE MAGIC */
-    width: min(95vw, 794px);
-    height: calc(min(95vw, 794px) * 1.414); /* A4 ratio */
+  width: min(95vw, 794px);
+  height: calc(min(95vw, 794px) * 1.414); /* A4 ratio */
 
-    margin: 20px auto;
-    perspective: 1500px;
-    margin-top: 145px;
-    position: relative;
+  margin: 20px auto;
+  margin-top: 145px;
+
+  perspective: 2000px;
+  position: relative;
+  overflow: hidden;
+  background: #f5f5f5;
 }
 
-/* Pages */
+/* Swipe hint */
+.flipbook::after {
+  content: "Swipe ➡";
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+/* ============================= */
+/* 📄 PAGES */
+/* ============================= */
+
 .flipbook .page {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 
-    top: 0;
-    left: 0;
+  top: 0;
+  left: 0;
 
-    transform-origin: left;
-    transform-style: preserve-3d;
-    transition: transform 0.8s ease;
+  background: white;
 
-    border-radius: 10px;
-    overflow: hidden; /* 🔥 FIX overflow */
-    backface-visibility: hidden; /* 🔥 FIX back bleed */
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+
+  backface-visibility: hidden;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* Prevent back showing through */
+/* Prevent back bleed */
 .flipbook .page::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: white;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  z-index: -1;
 }
 
 /* Flip animation */
 .flipbook .page.flipped {
-    transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
 }
 
 /* Page content */
 .flipbook .page-content {
-    padding: 15px;
-    height: 100%;
-    overflow: hidden;
+  padding: 15px;
+  height: 100%;
+  overflow: hidden;
 }
 
-/* Grid */
+/* ============================= */
+/* 🟩 COVER PAGE */
+/* ============================= */
+
+.cover {
+  background: linear-gradient(135deg, #1e7d32, #4caf50);
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cover-logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+/* ============================= */
+/* 🛍️ PRODUCT GRID */
+/* ============================= */
+
 .flipbook .listProduct {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-}
-
-/* Responsive grid */
-@media screen and (max-width: 600px) {
-  body {
-  -webkit-overflow-scrolling: touch;
-}
-  
-  .listProduct {
-    grid-template-columns: repeat(2, 1fr); /* 👈 2 per row */
-    gap: 12px;
-    padding: 0 10px;
-  }
-
-  .listProduct .item {
-    max-width: 100%;
-    padding: 10px;
-    border-radius: 12px;
-  }
-
-  .listProduct .item img {
-    height: 120px; /* 👈 smaller images */
-    object-fit: contain;
-  }
-
-  .listProduct .item h2 {
-    font-size: 14px;
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
 /* Cards */
 .flipbook .item {
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-    border-radius: 6px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  border-radius: 6px;
 }
 
 /* Images */
 .flipbook .item img {
-    width: 100%;
-    height: 100px;
-    object-fit: contain;
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
 }
 
-/* Buttons */
+/* ============================= */
+/* 📱 MOBILE OPTIMIZATION */
+/* ============================= */
+
+@media screen and (max-width: 600px) {
+
+  .flipbook {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .flipbook .listProduct {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0 10px;
+  }
+
+  .flipbook .item {
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .flipbook .item img {
+    height: 120px;
+  }
+
+  .flipbook .item h2 {
+    font-size: 14px;
+  }
+}
+
+/* ============================= */
+/* 🔘 CONTROLS */
+/* ============================= */
+
 .flip-controls {
-    display: none;
+  display: none;
 }
 
 body.leaflet-mode .flip-controls {
-    display: block;
-    text-align: center;
+  display: block;
+  text-align: center;
 }
 
 .flip-controls button {
-    padding: 10px 15px;
-    margin: 5px;
-    background: black;
-    color: white;
-    border: none;
-    cursor: pointer;
+  padding: 10px 15px;
+  margin: 5px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
 }
 
 /*-----------items-----------*/
