@@ -15,6 +15,12 @@ window.location.href = `mainshop.html?search=${encodeURIComponent(searchValue)}`
 }
 });
 
+const btn = document.getElementById("leafletBtn");
+
+btn.addEventListener("click", () => {
+    document.body.classList.toggle("leaflet-mode");
+});
+
 // 📁 Product Files
 const productFiles = [
 'mainshop-products.json',
