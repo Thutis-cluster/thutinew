@@ -96,7 +96,11 @@ $(document).ready(function () {
     });
 });
 
+const btn = document.getElementById("leafletBtn");
 
+btn.addEventListener("click", () => {
+    document.body.classList.toggle("leaflet-mode");
+});
 
 const addDataToHTML = () => {
     listProductHTML.innerHTML = '';
