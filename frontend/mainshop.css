@@ -758,6 +758,53 @@ body.leaflet-mode .flip-controls {
   border-radius: 6px;
 }
 
+/* ============================= */
+/* 📰 LEAFLET STYLE (MAGAZINE LOOK) */
+/* ============================= */
+
+body.leaflet-mode .flipbook .listProduct {
+  display: flex;              /* instead of grid */
+  flex-wrap: wrap;            /* wrap like a magazine */
+  gap: 15px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* REMOVE CARD LOOK */
+body.leaflet-mode .flipbook .item {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* IMAGE = MAIN FOCUS */
+body.leaflet-mode .flipbook .item img {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  filter: none;
+}
+
+/* TEXT UNDER IMAGE (CLEAN) */
+body.leaflet-mode .flipbook .item h2 {
+  font-size: 13px;
+  font-weight: 500;
+  color: #222;
+  margin-top: 5px;
+}
+
+/* OPTIONAL: slight "cutout" feel */
+body.leaflet-mode .flipbook .item:hover img {
+  transform: scale(1.05);
+  transition: 0.2s ease;
+}
+
+body.leaflet-mode .flipbook .page-content {
+  background: #fffdf5; /* paper tone */
+}
+
 /*-----------items-----------*/
 .container {
   height:max-content;
