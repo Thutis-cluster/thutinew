@@ -802,7 +802,7 @@ body.leaflet-mode .flipbook .item:hover img {
 }
 
 body.leaflet-mode .flipbook .page-content {
-  background: #fffdf5; /* paper tone */
+background: url('paper-texture.jpg');
 }
 
 /*-----------items-----------*/
