@@ -146,7 +146,16 @@ document.querySelectorAll('.listProduct').forEach(section => {
 const btn = document.getElementById("leafletBtn");
 
 btn.addEventListener("click", () => {
-    document.body.classList.toggle("leaflet-mode");
+
+    document.body.classList.add("page-flip");
+
+    setTimeout(() => {
+        document.body.classList.toggle("leaflet-mode");
+    }, 250);
+
+    setTimeout(() => {
+        document.body.classList.remove("page-flip");
+    }, 700);
 });
 
 // NewsLetter Modal
