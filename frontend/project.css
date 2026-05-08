@@ -1648,3 +1648,34 @@ body.leaflet-mode .addCart {
         break-inside: avoid;
     }
 }
+
+/* ===================================== */
+/* 📖 PAGE FLIP */
+/* ===================================== */
+
+body.page-flip .container {
+
+    animation: pageFlip 0.7s ease;
+}
+
+@keyframes pageFlip {
+
+    0% {
+        transform:
+        perspective(1400px)
+        rotateY(0deg);
+    }
+
+    50% {
+        transform:
+        perspective(1400px)
+        rotateY(-18deg)
+        scale(0.97);
+    }
+
+    100% {
+        transform:
+        perspective(1400px)
+        rotateY(0deg);
+    }
+}
