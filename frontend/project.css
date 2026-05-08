@@ -1372,14 +1372,13 @@ padding: 5px 0;
 }
 }
 
-/* ============================= */
-/* 📄 LEAFLET / CATALOGUE MODE */
-/* ============================= */
+/* ===================================== */
+/* 📖 LEAFLET / BOOK VIEW */
+/* ===================================== */
 
 body.leaflet-mode {
-    background: white;
-    color: black;
-    font-family: Arial, sans-serif;
+    background: #d9d9d9;
+    overflow-x: hidden;
 }
 
 /* Hide unnecessary UI */
@@ -1389,127 +1388,263 @@ body.leaflet-mode .footer-socialmedia,
 body.leaflet-mode .button-bar,
 body.leaflet-mode .icon-cart,
 body.leaflet-mode #searchForm,
-body.leaflet-mode .shopnowbtn {
+body.leaflet-mode .shopnowbtn,
+body.leaflet-mode .locator {
     display: none !important;
 }
 
 /* Header */
 body.leaflet-mode .index-logo {
-    text-align: center;
+    position: relative;
     background: white;
     box-shadow: none;
+    justify-content: center;
+    padding: 10px;
 }
 
 body.leaflet-mode .index-logo h1 {
-    font-size: 36px;
-    margin: 10px 0;
+    font-size: 42px;
+    margin: 0;
 }
 
-/* Container */
+/* ===================================== */
+/* 📖 BOOK PAGE */
+/* ===================================== */
+
 body.leaflet-mode .container {
-    max-width: 1000px;
-    margin: 20px auto;
+    max-width: 1400px;
+    margin: 120px auto 50px;
+    padding: 40px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.25),
+    inset 0 0 30px rgba(0,0,0,0.05);
+
+    transform-style: preserve-3d;
+
+    animation: openBook 0.8s ease;
 }
 
-/* ============================= */
-/* 🛍 PRODUCT GRID (CATALOGUE) */
-/* ============================= */
+/* Book opening animation */
+@keyframes openBook {
+    0% {
+        transform: rotateY(-18deg) scale(0.96);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotateY(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+/* ===================================== */
+/* 📦 PRODUCT GRID */
+/* ===================================== */
 
 body.leaflet-mode .listProduct {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 18px;
+
+    margin-top: 20px;
 }
 
-/* Product Card */
+/* ===================================== */
+/* 🛍 PRODUCT CARD */
+/* ===================================== */
+
 body.leaflet-mode .listProduct .item {
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 10px;
+
     position: relative;
-    text-align: center;
-    page-break-inside: avoid;
+
+    background:
+    linear-gradient(
+        145deg,
+        #ffffff,
+        #f3f3f3
+    );
+
+    border: 1px solid #ddd;
+
+    border-radius: 14px;
+
+    padding: 14px;
+
+    min-height: 330px;
+
+    transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+
+    overflow: hidden;
 }
 
-/* Product Image */
+/* Hover lift */
+body.leaflet-mode .listProduct .item:hover {
+
+    transform:
+    translateY(-6px)
+    rotate(-1deg);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.18);
+}
+
+/* Fake pasted-paper effect */
+body.leaflet-mode .listProduct .item::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -8px;
+    left: 50%;
+
+    transform: translateX(-50%) rotate(-2deg);
+
+    width: 90px;
+    height: 20px;
+
+    background: rgba(255,255,180,0.7);
+
+    box-shadow:
+    0 2px 4px rgba(0,0,0,0.1);
+
+    border-radius: 3px;
+}
+
+/* ===================================== */
+/* 🖼 PRODUCT IMAGE */
+/* ===================================== */
+
 body.leaflet-mode .listProduct .item img {
+
     width: 100%;
     height: 180px;
+
     object-fit: contain;
+
+    transition: transform 0.4s ease;
+
+    filter:
+    drop-shadow(0 8px 10px rgba(0,0,0,0.15));
 }
 
-/* Product Name */
+body.leaflet-mode .listProduct .item:hover img {
+    transform: scale(1.08);
+}
+
+/* ===================================== */
+/* 📝 TEXT */
+/* ===================================== */
+
 body.leaflet-mode .listProduct .item h2 {
-    font-size: 16px;
-    margin: 10px 0 5px;
+
+    font-size: 17px;
+
+    line-height: 1.4;
+
+    margin: 14px 0 10px;
+
+    color: #222;
 }
 
-/* ============================= */
-/* 💰 PRICE TAG STYLE */
-/* ============================= */
-
+/* Price */
 body.leaflet-mode .price {
-    display: inline-block;
+
+    display: inline-block !important;
+
     background: #e60023;
+
     color: white;
-    padding: 6px 10px;
-    font-weight: bold;
-    font-size: 16px;
-    border-radius: 4px;
-    margin-top: 5px;
+
+    padding: 8px 14px;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    border-radius: 50px;
+
+    margin-top: 8px;
+
+    box-shadow:
+    0 4px 10px rgba(230,0,35,0.35);
 }
 
-/* ============================= */
-/* 🔥 BADGES (SALE / NEW) */
-/* ============================= */
-
-body.leaflet-mode .badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: black;
-    color: white;
-    padding: 4px 8px;
-    font-size: 12px;
-    font-weight: bold;
+/* Hide buttons in leaflet mode */
+body.leaflet-mode .addCart {
+    display: none !important;
 }
 
-body.leaflet-mode .badge.sale {
-    background: #e60023;
+/* ===================================== */
+/* 📱 MOBILE */
+/* ===================================== */
+
+@media screen and (max-width: 768px) {
+
+    body.leaflet-mode .container {
+
+        margin-top: 100px;
+
+        padding: 20px;
+    }
+
+    body.leaflet-mode .listProduct {
+
+        grid-template-columns:
+        repeat(2, 1fr);
+
+        gap: 14px;
+    }
+
+    body.leaflet-mode .listProduct .item {
+
+        min-height: 280px;
+    }
+
+    body.leaflet-mode .listProduct .item img {
+
+        height: 140px;
+    }
 }
 
-body.leaflet-mode .badge.new {
-    background: #007bff;
-}
-
-/* ============================= */
-/* 🖨 PRINT SETTINGS (A4) */
-/* ============================= */
-
-@page {
-    size: A4;
-    margin: 10mm;
-}
+/* ===================================== */
+/* 🖨 PRINT */
+/* ===================================== */
 
 @media print {
+
     body {
         background: white;
     }
 
-    /* Ensure proper grid on print */
-    .listProduct {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
+    body.leaflet-mode .container {
+
+        box-shadow: none;
+
+        margin: 0;
+
+        padding: 0;
     }
 
-    /* Avoid breaking product cards */
-    .item {
-        page-break-inside: avoid;
+    body.leaflet-mode .listProduct {
+
+        grid-template-columns:
+        repeat(3, 1fr);
+
+        gap: 12px;
     }
 
-    /* Header spacing */
-    .index-logo h1 {
-        font-size: 28px;
+    body.leaflet-mode .listProduct .item {
+
+        break-inside: avoid;
     }
 }
