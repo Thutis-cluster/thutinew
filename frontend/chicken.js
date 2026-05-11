@@ -158,6 +158,64 @@ btn.addEventListener("click", () => {
     }, 700);
 });
 
+/* ================================= */
+/* 📖 FLIPBOOK */
+/* ================================= */
+
+const pages = document.querySelectorAll('.page');
+
+const nextBtn = document.getElementById('nextPage');
+const prevBtn = document.getElementById('prevPage');
+
+let currentPage = 0;
+
+/* SHOW PAGE */
+
+function updateBook() {
+
+    pages.forEach((page, index) => {
+
+        page.classList.remove('active');
+
+        if(index < currentPage){
+            page.classList.add('flipped');
+        } else {
+            page.classList.remove('flipped');
+        }
+
+    });
+
+    pages[currentPage].classList.add('active');
+}
+
+/* NEXT */
+
+nextBtn.addEventListener('click', () => {
+
+    if(currentPage < pages.length - 1){
+
+        currentPage++;
+
+        updateBook();
+    }
+});
+
+/* PREVIOUS */
+
+prevBtn.addEventListener('click', () => {
+
+    if(currentPage > 0){
+
+        currentPage--;
+
+        updateBook();
+    }
+});
+
+/* INIT */
+
+updateBook();
+
 // NewsLetter Modal
 document.addEventListener("DOMContentLoaded", () => {
   // Load the modal HTML dynamically
