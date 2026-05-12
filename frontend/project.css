@@ -2111,3 +2111,112 @@ body.leaflet-mode .products-section{
         font-size: 14px;
     }
 }
+
+/* ========================================= */
+/* NORMAL SHOP VIEW */
+/* ========================================= */
+
+.products-section{
+    display: none;
+}
+
+body.leaflet-mode .products-section{
+    display: block;
+}
+
+/* Hide normal products in leaflet */
+
+body.leaflet-mode .container{
+    display: none;
+}
+
+/* ========================================= */
+/* LEAFLET PRODUCTS */
+/* ========================================= */
+
+body.leaflet-mode .listProduct{
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(220px,1fr));
+
+    gap: 20px;
+}
+
+body.leaflet-mode .listProduct .item{
+
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    box-shadow:
+    0 6px 18px rgba(0,0,0,.12);
+
+    transition: .3s;
+}
+
+body.leaflet-mode .listProduct .item:hover{
+
+    transform: translateY(-5px);
+}
+
+body.leaflet-mode .listProduct .item img{
+
+    width: 100%;
+
+    height: 180px;
+
+    object-fit: contain;
+}
+
+body.leaflet-mode .listProduct .item h2{
+
+    font-size: 16px;
+
+    margin-top: 10px;
+
+    color: #222;
+}
+
+/* REMOVE PRICE + BUTTON */
+
+body.leaflet-mode .price,
+body.leaflet-mode .addCart{
+    display: none !important;
+}
+
+/* ========================================= */
+/* MOBILE */
+/* ========================================= */
+
+@media(max-width:768px){
+
+    .page{
+
+        position: relative;
+
+        min-height: auto;
+
+        margin-bottom: 20px;
+    }
+
+    .flipbook{
+
+        min-height: auto;
+    }
+
+    .book-controls{
+
+        position: sticky;
+
+        bottom: 10px;
+
+        z-index: 100;
+    }
+
+}
