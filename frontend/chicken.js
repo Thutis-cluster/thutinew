@@ -82,54 +82,139 @@ $(document).ready(function () {
 });
 
 // Add products to HTML
-const createProductElement = (product) => {
+const createProductElement = (product, leaflet = false) => {
+
     const item = document.createElement('div');
+
     item.classList.add('item');
+
     item.dataset.id = product.id;
+
     item.innerHTML = `
-        <img src="${product.image}" alt="">
+    
+        <img src="${product.image}" alt="${product.name}">
+
         <h2>${product.name}</h2>
-        <hr/>
-        <div class="price">R${product.price}</div>
-        <button class="addCart">Add to Cart</button>
+
+        ${
+            leaflet
+            ? ''
+            : `
+                <hr/>
+                <div class="price">R${product.price}</div>
+                <button class="addCart">Add to Cart</button>
+            `
+        }
+
     `;
+
     return item;
 };
 
 const addDataToHTML = () => {
+
+    /* NORMAL SHOP VIEW */
+
+    const normalContainer = document.querySelector('.container .listProduct');
+
+    if(normalContainer){
+
+        normalContainer.innerHTML = '';
+
+        listProducts.forEach(product => {
+
+            normalContainer.appendChild(
+                createProductElement(product)
+            );
+
+        });
+    }
+
+    /* LEAFLET VIEW */
+
     const categorySections = {
-        "Chicken": document.getElementById("section-Chicken"),
-        "Eggs": document.getElementById("section-Eggs"),
-        "Chicken Feed": document.getElementById("section-ChickenFeed")
+
+        "Chicken":
+        document.getElementById("section-Chicken"),
+
+        "Eggs":
+        document.getElementById("section-Eggs"),
+
+        "Chicken Feed":
+        document.getElementById("section-ChickenFeed")
     };
 
     const categories = [
-        { name: "Chicken", keywords: ["broiler", "hard body", "red star", "intestines"] },
-        { name: "Eggs", keywords: ["egg", "eggs"] },
-        { name: "Chicken Feed", keywords: ["feed", "lays mash", "finisher", "starter"] }
+
+        {
+            name: "Chicken",
+            keywords: [
+                "broiler",
+                "hard body",
+                "red star",
+                "intestines",
+                "chicken"
+            ]
+        },
+
+        {
+            name: "Eggs",
+            keywords: [
+                "egg",
+                "eggs"
+            ]
+        },
+
+        {
+            name: "Chicken Feed",
+            keywords: [
+                "feed",
+                "mash",
+                "starter",
+                "grower",
+                "finisher"
+            ]
+        }
     ];
 
-    // Clear old data
-    Object.values(categorySections).forEach(section => section.innerHTML = '');
+    /* CLEAR OLD */
+
+    Object.values(categorySections).forEach(section => {
+
+        if(section){
+            section.innerHTML = '';
+        }
+
+    });
+
+    /* ADD PRODUCTS */
 
     listProducts.forEach(product => {
-        const name = product.name.toLowerCase();
-        let matched = false;
 
-        for (const category of categories) {
-            if (category.keywords.some(keyword => name.includes(keyword))) {
+        const productName = product.name.toLowerCase();
+
+        for(const category of categories){
+
+            const matched = category.keywords.some(keyword =>
+                productName.includes(keyword)
+            );
+
+            if(matched){
+
                 const section = categorySections[category.name];
-                if (section) {
-                    section.appendChild(createProductElement(product));
-                    matched = true;
-                    break;
+
+                if(section){
+
+                    section.appendChild(
+                        createProductElement(product, true)
+                    );
+
                 }
+
+                break;
             }
         }
 
-        if (!matched) {
-            console.warn(`Uncategorized product: ${product.name}`);
-        }
     });
 };
 
@@ -147,15 +232,13 @@ const btn = document.getElementById("leafletBtn");
 
 btn.addEventListener("click", () => {
 
-    document.body.classList.add("page-flip");
+    document.body.classList.toggle("leaflet-mode");
 
-    setTimeout(() => {
-        document.body.classList.toggle("leaflet-mode");
-    }, 250);
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
-    setTimeout(() => {
-        document.body.classList.remove("page-flip");
-    }, 700);
 });
 
 /* ================================= */
@@ -165,27 +248,27 @@ btn.addEventListener("click", () => {
 const pages = document.querySelectorAll('.page');
 
 const nextBtn = document.getElementById('nextPage');
+
 const prevBtn = document.getElementById('prevPage');
 
 let currentPage = 0;
 
-/* SHOW PAGE */
-
-function updateBook() {
+function updateBook(){
 
     pages.forEach((page, index) => {
 
         page.classList.remove('active');
 
+        page.classList.remove('flipped');
+
         if(index < currentPage){
             page.classList.add('flipped');
-        } else {
-            page.classList.remove('flipped');
         }
 
     });
 
     pages[currentPage].classList.add('active');
+
 }
 
 /* NEXT */
@@ -197,7 +280,9 @@ nextBtn.addEventListener('click', () => {
         currentPage++;
 
         updateBook();
+
     }
+
 });
 
 /* PREVIOUS */
@@ -209,10 +294,50 @@ prevBtn.addEventListener('click', () => {
         currentPage--;
 
         updateBook();
+
     }
+
 });
 
-/* INIT */
+/* MOBILE SWIPE */
+
+let startX = 0;
+
+document.querySelector('.flipbook').addEventListener('touchstart', e => {
+
+    startX = e.changedTouches[0].screenX;
+
+});
+
+document.querySelector('.flipbook').addEventListener('touchend', e => {
+
+    let endX = e.changedTouches[0].screenX;
+
+    if(endX < startX - 50){
+
+        if(currentPage < pages.length - 1){
+
+            currentPage++;
+
+            updateBook();
+
+        }
+
+    }
+
+    if(endX > startX + 50){
+
+        if(currentPage > 0){
+
+            currentPage--;
+
+            updateBook();
+
+        }
+
+    }
+
+});
 
 updateBook();
 
